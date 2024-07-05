@@ -34,12 +34,27 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "tsx",
         "vim",
         "lua",
         "vimdoc",
         "html",
         "css",
       },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+    },
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      enable_close = true,
+      enable_rename = true,
+      enable_close_on_slash = true,
     },
   },
 }
