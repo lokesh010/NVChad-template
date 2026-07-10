@@ -15,10 +15,14 @@ M.base46 = {
 }
 
 -- M.nvdash = { load_on_startup = true }
--- M.ui = {
---       tabufline = {
---          lazyload = false
---      }
--- }
+
+M.ui = {
+	tabufline = {
+		-- nvim-tree is docked on the right (see plugins/init.lua), so move the
+		-- treeOffset module to the end of the order too, otherwise tabufline
+		-- keeps padding blank space on the left as if the tree were there.
+		order = { "buffers", "tabs", "btns", "treeOffset" },
+	},
+}
 
 return M
